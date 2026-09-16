@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="aurora">
+<html lang="zh-TW" data-theme="aurora">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Personal Dashboard showcasing live clock, personalized greeting, and day progress.">
-  <title>JunKai's Personal Space</title>
+  <meta name="description" content="JunKai's Personal Page - 1151 AIoT & Data Analysis Showcase with Live Clock, Skills, Projects, and GitHub Integration.">
+  <title>JunKai's Personal Space | 1151 AIoT-DA</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,9 +19,17 @@
   <main class="dashboard-container">
     <!-- Top Navigation / Status bar -->
     <header class="top-nav">
-      <div class="status-indicator">
-        <span class="status-dot"></span>
-        <span class="status-text">Active • AIoT Space</span>
+      <div class="brand-group">
+        <div class="status-indicator">
+          <span class="status-dot"></span>
+          <span class="status-text">Active • AIoT Space</span>
+        </div>
+        <nav class="nav-links" aria-label="Page Navigation">
+          <a href="#profile" class="nav-link">👤 Profile</a>
+          <a href="#clock" class="nav-link">🕐 Clock</a>
+          <a href="#skills" class="nav-link">🛠 Skills</a>
+          <a href="#projects" class="nav-link">🚀 Projects</a>
+        </nav>
       </div>
 
       <div class="nav-actions">
@@ -56,20 +64,25 @@
       </div>
     </header>
 
-    <!-- Hero Profile Section -->
-    <section class="profile-hero glass-card">
+    <!-- 👤 1. Hero Profile Section -->
+    <section class="profile-hero glass-card" id="profile">
       <div class="avatar-container">
         <div class="avatar-ring">
-          <div class="avatar-inner" id="avatarInitial">J</div>
+          <img src="https://avatars.githubusercontent.com/u/106213347?v=4" alt="JunKai Avatar" class="avatar-img" id="userAvatarImg" onerror="this.style.display='none'; document.getElementById('avatarInitial').style.display='flex';">
+          <div class="avatar-inner" id="avatarInitial" style="display: none;">J</div>
         </div>
-        <div class="online-badge" title="Online"></div>
+        <div class="online-badge" title="Status: Online & Ready"></div>
       </div>
 
       <div class="profile-details">
-        <div class="greeting-tag" id="greetingTag">
-          <span id="greetingIcon">✨</span>
-          <span id="greetingText">Good morning</span>
+        <div class="profile-meta-top">
+          <div class="greeting-tag" id="greetingTag">
+            <span id="greetingIcon">✨</span>
+            <span id="greetingText">Good morning</span>
+          </div>
+          <span class="dept-badge">🎓 資訊工程 / AIoT 智慧物聯網與數據分析</span>
         </div>
+
         <h1 class="user-title">
           Welcome back, 
           <span class="editable-name-container">
@@ -82,12 +95,22 @@
             </button>
           </span>
         </h1>
-        <p class="profile-subtitle">Have a productive and inspired day ahead!</p>
+
+        <p class="profile-bio">
+          熱衷於探索 <strong>人工智慧 (AI)</strong>、<strong>邊緣運算 (Edge AI)</strong> 與 <strong>物聯網 (IoT)</strong> 的深度整合應用。專注於感測器訊號即時採集、數據清洗與機器學習分析，並打造直覺美觀的前端動態監控儀表板，致力於實踐具實用價值的智慧聯網數據解決方案。
+        </p>
+
+        <div class="profile-chips">
+          <span class="chip chip-specialty">⚡ 專長：Python • Machine Learning • IoT 邊緣感測 • 數據分析</span>
+          <a href="mailto:lk000055668@gmail.com" class="chip chip-contact">📧 lk000055668@gmail.com</a>
+          <a href="https://github.com/lk000055668" target="_blank" rel="noopener noreferrer" class="chip chip-github">🐙 GitHub: @lk000055668</a>
+          <span class="chip chip-status">🟢 專案進行中 (1151 AIoT-DA)</span>
+        </div>
       </div>
     </section>
 
-    <!-- Main Clock Card -->
-    <section class="clock-section glass-card">
+    <!-- 🕐 4. Main Clock Section -->
+    <section class="clock-section glass-card" id="clock">
       <div class="clock-header">
         <div class="badge-pill">
           <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
@@ -130,6 +153,246 @@
       </div>
     </section>
 
+    <!-- 🛠 2. Skills Section -->
+    <section class="skills-section glass-card" id="skills">
+      <div class="section-heading">
+        <div class="heading-badge">COMPETENCIES</div>
+        <h2 class="section-title">🛠 專業技能 (Skills & Competencies)</h2>
+        <p class="section-desc">涵蓋人工智慧、物聯網感測終端、數據分析與現代前端工程的核心技術棧</p>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Skill 1: Python -->
+        <div class="skill-card">
+          <div class="skill-header">
+            <div class="skill-icon-wrap icon-python">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                <path d="M11.91 0c-1.8 0-3.41.34-4.5.96-1.64.93-1.64 2.22-1.64 3.75v2.8h6.29v.93H3.63c-1.53 0-2.82 1.05-3.23 2.7-.47 1.89-.49 3.07 0 5.02.37 1.48 1.25 2.68 2.78 2.78h1.8v-2.48c0-1.8 1.53-3.34 3.34-3.34h6.29c1.47 0 2.67-1.2 2.67-2.67V4.71c0-1.5-.96-2.58-2.67-3.22-1.1-.42-2.3-.64-3.38-.64zm-3.37 1.88a.94.94 0 1 1 0 1.88.94.94 0 0 1 0-1.88zM18.27 7.06c-.37-1.48-1.25-2.68-2.78-2.78h-1.8v2.48c0 1.8-1.53 3.34-3.34 3.34H4.06c-1.47 0-2.67 1.2-2.67 2.67v5.74c0 1.5.96 2.58 2.67 3.22 1.64.63 3.48.63 5.39.63 1.8 0 3.41-.34 4.5-.96 1.64-.93 1.64-2.22 1.64-3.75v-2.8H9.3v-.93h8.43c1.53 0 2.82-1.05 3.23-2.7.47-1.89.49-3.07 0-5.02zM15.46 20.25a.94.94 0 1 1 0-1.88.94.94 0 0 1 0 1.88z"/>
+              </svg>
+            </div>
+            <div class="skill-info">
+              <h3>Python 程式設計</h3>
+              <span class="skill-category">Core Language</span>
+            </div>
+            <span class="skill-percent">92%</span>
+          </div>
+          <p class="skill-summary">資料結構處理、物件導向 (OOP)、自動化腳本撰寫與科學運算庫整合應用。</p>
+          <div class="skill-meter"><div class="meter-bar" style="width: 92%;"></div></div>
+          <div class="skill-tags">
+            <span>NumPy</span>
+            <span>Pandas</span>
+            <span>Matplotlib</span>
+            <span>Automation</span>
+          </div>
+        </div>
+
+        <!-- Skill 2: Machine Learning & AI -->
+        <div class="skill-card">
+          <div class="skill-header">
+            <div class="skill-icon-wrap icon-ai">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2a4 4 0 0 1 4 4v1a4 4 0 0 1 4 4v2a4 4 0 0 1-4 4v1a4 4 0 0 1-4 4 4 4 0 0 1-4-4v-1a4 4 0 0 1-4-4v-2a4 4 0 0 1 4-4V6a4 4 0 0 1 4-4z"></path>
+                <line x1="9" y1="9" x2="9" y2="9.01"></line>
+                <line x1="15" y1="9" x2="15" y2="9.01"></line>
+                <path d="M8 15h8"></path>
+              </svg>
+            </div>
+            <div class="skill-info">
+              <h3>Machine Learning & AI</h3>
+              <span class="skill-category">Intelligent Systems</span>
+            </div>
+            <span class="skill-percent">86%</span>
+          </div>
+          <p class="skill-summary">機器學習演算法實作、特徵工程、分類與迴歸模型評估及邊緣推論 (Edge AI)。</p>
+          <div class="skill-meter"><div class="meter-bar" style="width: 86%;"></div></div>
+          <div class="skill-tags">
+            <span>Scikit-learn</span>
+            <span>Classification</span>
+            <span>Regression</span>
+            <span>Edge AI</span>
+          </div>
+        </div>
+
+        <!-- Skill 3: IoT & Embedded Systems -->
+        <div class="skill-card">
+          <div class="skill-header">
+            <div class="skill-icon-wrap icon-iot">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                <rect x="9" y="9" width="6" height="6"></rect>
+                <line x1="9" y1="1" x2="9" y2="4"></line>
+                <line x1="15" y1="1" x2="15" y2="4"></line>
+                <line x1="9" y1="20" x2="9" y2="23"></line>
+                <line x1="15" y1="20" x2="15" y2="23"></line>
+                <line x1="20" y1="9" x2="23" y2="9"></line>
+                <line x1="20" y1="14" x2="23" y2="14"></line>
+                <line x1="1" y1="9" x2="4" y2="9"></line>
+                <line x1="1" y1="14" x2="4" y2="14"></line>
+              </svg>
+            </div>
+            <div class="skill-info">
+              <h3>IoT 智慧物聯網</h3>
+              <span class="skill-category">Hardware & Sensors</span>
+            </div>
+            <span class="skill-percent">88%</span>
+          </div>
+          <p class="skill-summary">ESP32 / Arduino 韌體控制、各類感測器訊號獲取、MQTT 與 HTTP 聯網傳輸。</p>
+          <div class="skill-meter"><div class="meter-bar" style="width: 88%;"></div></div>
+          <div class="skill-tags">
+            <span>ESP32</span>
+            <span>Arduino</span>
+            <span>MQTT</span>
+            <span>Sensors</span>
+          </div>
+        </div>
+
+        <!-- Skill 4: Data Analysis -->
+        <div class="skill-card">
+          <div class="skill-header">
+            <div class="skill-icon-wrap icon-data">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+            </div>
+            <div class="skill-info">
+              <h3>Data Analysis 數據分析</h3>
+              <span class="skill-category">Data Science</span>
+            </div>
+            <span class="skill-percent">88%</span>
+          </div>
+          <p class="skill-summary">探索性數據分析 (EDA)、遺漏值處理與數據清洗、統計圖表繪製與關鍵指標洞察。</p>
+          <div class="skill-meter"><div class="meter-bar" style="width: 88%;"></div></div>
+          <div class="skill-tags">
+            <span>EDA</span>
+            <span>Data Cleaning</span>
+            <span>Seaborn</span>
+            <span>Statistics</span>
+          </div>
+        </div>
+
+        <!-- Skill 5: Web Development -->
+        <div class="skill-card">
+          <div class="skill-header">
+            <div class="skill-icon-wrap icon-web">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <div class="skill-info">
+              <h3>Web Development 前端開發</h3>
+              <span class="skill-category">Frontend & UI</span>
+            </div>
+            <span class="skill-percent">85%</span>
+          </div>
+          <p class="skill-summary">語意化 HTML5、極簡現代毛玻璃 CSS3 (Glassmorphism)、原生 JavaScript (ES6+)。</p>
+          <div class="skill-meter"><div class="meter-bar" style="width: 85%;"></div></div>
+          <div class="skill-tags">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>JavaScript</span>
+            <span>Responsive</span>
+          </div>
+        </div>
+
+        <!-- Skill 6: Git & Version Control -->
+        <div class="skill-card">
+          <div class="skill-header">
+            <div class="skill-icon-wrap icon-git">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="18" cy="18" r="3"></circle>
+                <circle cx="6" cy="6" r="3"></circle>
+                <path d="M13 6h3a2 2 0 0 1 2 2v7"></path>
+                <line x1="6" y1="9" x2="6" y2="21"></line>
+              </svg>
+            </div>
+            <div class="skill-info">
+              <h3>Git & GitHub 版本控制</h3>
+              <span class="skill-category">DevOps & Tools</span>
+            </div>
+            <span class="skill-percent">87%</span>
+          </div>
+          <p class="skill-summary">Git 版本分支管理、Commit 規範、GitHub 團隊協作與 GitHub Pages 自動部署流程。</p>
+          <div class="skill-meter"><div class="meter-bar" style="width: 87%;"></div></div>
+          <div class="skill-tags">
+            <span>Git</span>
+            <span>GitHub Pages</span>
+            <span>CI/CD</span>
+            <span>Workflow</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🚀 3. Projects Section -->
+    <section class="projects-section glass-card" id="projects">
+      <div class="section-heading">
+        <div class="heading-badge">SHOWCASE</div>
+        <h2 class="section-title">🚀 專案作品 (Featured Projects)</h2>
+        <p class="section-desc">結合物聯網感測終端、雲端傳輸、人工智慧與前端數據視覺化的實務開發成果</p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1: AIoT Environmental Monitoring -->
+        <article class="project-card">
+          <div class="project-header">
+            <div class="project-badge in-progress">本學期核心專案 • In Progress</div>
+            <span class="project-type">AIoT & Telemetry</span>
+          </div>
+          <h3 class="project-title">AIoT 智慧環境感測與即時數據分析系統</h3>
+          <p class="project-desc">
+            結合 ESP32 微控制器與高精度感測器陣列（溫濕度、空氣品質與光照），進行邊緣端即時遙測數據採集。透過 MQTT 輕量化協定上傳至後端 Python 數據處理核心，實時進行統計特徵分析與異常狀態警示，並於視覺化儀表板呈現動態趨勢監控。
+          </p>
+          <div class="tech-stack-row">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">ESP32 / IoT</span>
+            <span class="tech-tag">MQTT Protocol</span>
+            <span class="tech-tag">Data Analysis</span>
+            <span class="tech-tag">Edge Computing</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/lk000055668/AioT-0916" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary" title="View Source on GitHub">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub Repository
+            </a>
+            <a href="https://lk000055668.github.io/AioT-0916/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary" title="Open Live Site">
+              預覽展示頁面 ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 2: JunKai's Personal Space & Live Clock -->
+        <article class="project-card">
+          <div class="project-header">
+            <div class="project-badge deployed">已上線 • Live Deployment</div>
+            <span class="project-type">Web Engineering</span>
+          </div>
+          <h3 class="project-title">JunKai's Personal Space & Live Clock Dashboard</h3>
+          <p class="project-desc">
+            基於現代深色毛玻璃擬態 (Dark Glassmorphism) 設計之個人化儀表板。內建 JavaScript 高精度數位時鐘、日進度指示條、時段動態問候語、三組即時切換色彩主題 (Aurora / Cyber / Slate)，並透過 GitHub REST API 即時連線同步 Repository 狀態。
+          </p>
+          <div class="tech-stack-row">
+            <span class="tech-tag">HTML5 Semantic</span>
+            <span class="tech-tag">Vanilla CSS3</span>
+            <span class="tech-tag">JavaScript (ES6+)</span>
+            <span class="tech-tag">GitHub REST API</span>
+            <span class="tech-tag">GitHub Pages</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/lk000055668/AioT-0916" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary" title="View Source on GitHub">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub Repository
+            </a>
+            <a href="https://lk000055668.github.io/AioT-0916/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary" title="Visit Live Site">
+              瀏覽即時網站 ↗
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <!-- Quick Productivity & Focus Cards -->
     <section class="info-grid">
       <div class="info-card glass-card">
@@ -157,15 +420,15 @@
         <ul class="focus-list">
           <li>
             <span class="bullet-dot"></span>
-            <span>Focus Session: Deep Work & AIoT</span>
+            <span>Focus Session: AIoT & Edge Intelligence</span>
           </li>
           <li>
             <span class="bullet-dot"></span>
-            <span>System Status: Optimal Performance</span>
+            <span>Data Analysis: EDA & Telemetry Pipeline</span>
           </li>
           <li>
             <span class="bullet-dot"></span>
-            <span id="milestoneTag">Q3 Milestone Tracker</span>
+            <span id="milestoneTag">1151 AIoT-DA Semester Milestone</span>
           </li>
         </ul>
       </div>
@@ -218,7 +481,10 @@
 
     <!-- Footer -->
     <footer class="dashboard-footer">
-      <p>Crafted for <strong id="footerUserName">JunKai</strong> • <a href="https://github.com/lk000055668/AioT-0916" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub: lk000055668/AioT-0916</a> • Local Time Synchronization</p>
+      <p>
+        Crafted by <strong id="footerUserName">JunKai</strong> for <strong>1151 AIoT & Data Analysis</strong> • 
+        <a href="https://github.com/lk000055668/AioT-0916" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub: lk000055668/AioT-0916</a>
+      </p>
     </footer>
   </main>
 
