@@ -222,6 +222,29 @@
     });
   }
 
+  // --- GitHub Repo Integration ---
+  async function checkGitHubRepoStatus() {
+    const repoStatusBadge = document.getElementById('repoStatusBadge');
+    const repoVisibility = document.getElementById('repoVisibility');
+    const REPO_API = 'https://api.github.com/repos/lk000055668/AioT-0916';
+
+    try {
+      const res = await fetch(REPO_API, { cache: 'no-cache' });
+      if (res.ok) {
+        const data = await res.json();
+        if (repoVisibility) {
+          repoVisibility.textContent = data.private ? 'Private' : 'Public';
+        }
+        if (repoStatusBadge) {
+          repoStatusBadge.innerHTML = `<span class="status-dot"></span><span>Synced</span>`;
+        }
+      }
+    } catch (e) {
+      // Gracefully silent on network failure or rate limit
+      console.log('GitHub API status info:', e);
+    }
+  }
+
   // --- Initialization ---
   function init() {
     loadUserName();
@@ -229,6 +252,7 @@
     loadInspiration();
     updateClock();
     setupEventListeners();
+    checkGitHubRepoStatus();
 
     // High accuracy timer: tick every second synced to exact boundary
     setInterval(updateClock, 1000);
