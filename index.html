@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="aurora">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal Dashboard showcasing live clock, personalized greeting, and day progress.">
+  <title>JunKai's Personal Space</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient background glow elements -->
+  <div class="ambient-glow orb-1" aria-hidden="true"></div>
+  <div class="ambient-glow orb-2" aria-hidden="true"></div>
+  <div class="ambient-glow orb-3" aria-hidden="true"></div>
+
+  <main class="dashboard-container">
+    <!-- Top Navigation / Status bar -->
+    <header class="top-nav">
+      <div class="status-indicator">
+        <span class="status-dot"></span>
+        <span class="status-text">Active • AIoT Space</span>
+      </div>
+
+      <div class="nav-actions">
+        <a href="https://github.com/lk000055668/AioT-0916" target="_blank" rel="noopener noreferrer" class="github-link-btn" title="View repository on GitHub">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          <span>lk000055668/AioT-0916</span>
+        </a>
+
+        <div class="theme-controls">
+          <label for="themeSelect" class="sr-only">Choose Theme</label>
+          <div class="theme-selector-wrapper">
+            <svg class="theme-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <select id="themeSelect" aria-label="Select Theme">
+              <option value="aurora">Aurora Glow</option>
+              <option value="cyber">Cyber Neon</option>
+              <option value="slate">Midnight Slate</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Profile Section -->
+    <section class="profile-hero glass-card">
+      <div class="avatar-container">
+        <div class="avatar-ring">
+          <div class="avatar-inner" id="avatarInitial">J</div>
+        </div>
+        <div class="online-badge" title="Online"></div>
+      </div>
+
+      <div class="profile-details">
+        <div class="greeting-tag" id="greetingTag">
+          <span id="greetingIcon">✨</span>
+          <span id="greetingText">Good morning</span>
+        </div>
+        <h1 class="user-title">
+          Welcome back, 
+          <span class="editable-name-container">
+            <span id="userNameDisplay" class="name-highlight" title="Click to edit name">JunKai</span>
+            <button id="editNameBtn" class="edit-btn" aria-label="Edit your display name" title="Edit name">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+              </svg>
+            </button>
+          </span>
+        </h1>
+        <p class="profile-subtitle">Have a productive and inspired day ahead!</p>
+      </div>
+    </section>
+
+    <!-- Main Clock Card -->
+    <section class="clock-section glass-card">
+      <div class="clock-header">
+        <div class="badge-pill">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          <span id="timezoneBadge">UTC+08:00</span>
+        </div>
+        <div class="live-pulse">
+          <span class="pulse-circle"></span>
+          <span>LIVE CLOCK</span>
+        </div>
+      </div>
+
+      <div class="digital-clock" id="digitalClock" aria-label="Current live time">
+        <div class="time-digits">
+          <span class="digit-box" id="hours">00</span>
+          <span class="colon">:</span>
+          <span class="digit-box" id="minutes">00</span>
+          <span class="colon">:</span>
+          <span class="digit-box" id="seconds">00</span>
+        </div>
+        <div class="time-period" id="ampm">AM</div>
+      </div>
+
+      <div class="date-display" id="dateDisplay">
+        <span class="weekday" id="weekdayName">Wednesday</span>,
+        <span class="full-date" id="fullDate">September 16, 2026</span>
+      </div>
+
+      <!-- Day Progress Bar -->
+      <div class="day-progress-container">
+        <div class="progress-info">
+          <span class="progress-label">Today's Progress</span>
+          <span class="progress-pct" id="dayProgressPercent">0%</span>
+        </div>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="dayProgressBar" style="width: 0%;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Productivity & Focus Cards -->
+    <section class="info-grid">
+      <div class="info-card glass-card">
+        <div class="card-icon-header">
+          <div class="icon-circle quote-icon">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </div>
+          <h3>Daily Inspiration</h3>
+        </div>
+        <p class="quote-text" id="dailyQuote">"The secret of getting ahead is getting started."</p>
+        <span class="quote-author" id="dailyAuthor">— Mark Twain</span>
+      </div>
+
+      <div class="info-card glass-card">
+        <div class="card-icon-header">
+          <div class="icon-circle quick-links-icon">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+          <h3>Quick Focus</h3>
+        </div>
+        <ul class="focus-list">
+          <li>
+            <span class="bullet-dot"></span>
+            <span>Focus Session: Deep Work & AIoT</span>
+          </li>
+          <li>
+            <span class="bullet-dot"></span>
+            <span>System Status: Optimal Performance</span>
+          </li>
+          <li>
+            <span class="bullet-dot"></span>
+            <span id="milestoneTag">Q3 Milestone Tracker</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+      <p>Crafted for <strong id="footerUserName">JunKai</strong> • Local Time Synchronization</p>
+    </footer>
+  </main>
+
+  <!-- Edit Name Modal -->
+  <div class="modal-overlay" id="nameModal" aria-hidden="true">
+    <div class="modal-content glass-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <h2 id="modalTitle">Change Display Name</h2>
+      <p class="modal-desc">Enter your preferred name to personalize this dashboard:</p>
+      <div class="input-group">
+        <input type="text" id="nameInput" placeholder="e.g. JunKai" maxlength="25" autocomplete="off">
+      </div>
+      <div class="modal-actions">
+        <button id="cancelNameBtn" class="btn btn-secondary">Cancel</button>
+        <button id="saveNameBtn" class="btn btn-primary">Save Changes</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
