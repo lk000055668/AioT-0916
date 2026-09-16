@@ -7,6 +7,12 @@ A modern, glassmorphic personal portfolio dashboard crafted for the **1151 AIoT 
 
 ---
 
+## 📸 Preview
+
+![JunKai Personal Space Dashboard - Dark Glassmorphism with Live Clock, Profile, Skills and Projects](docs/screenshot.png)
+
+---
+
 ## 📋 Course Requirements Checklist (課程五大要求)
 
 | 項次 | 要求項目 | 內容與實作 | 狀態 |
